@@ -1,0 +1,19 @@
+{
+  "name": "anime-cli",
+  "version": "1.0.0",
+  "description": "Anime CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "anime-cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LastCleanShirt/anime_cli.git"
+  },
+  "author": "LastCleanShirt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LastCleanShirt/anime_cli/issues"
+  },
+  "homepage": "https://github.com/LastCleanShirt/anime_cli#readme"
+}
