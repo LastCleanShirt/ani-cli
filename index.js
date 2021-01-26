@@ -7,6 +7,7 @@ const version = "1.0.0";
 
 // data
 const searchData = require("./data/searchData.js");
+const recommendationData = require("./data/recommendationData.js");
 
 // commander.js
 const { Command } = require("commander");
@@ -29,6 +30,16 @@ program
 		} else {
 			console.log(searchData);
 		}*/
+	})
+
+// recommendation options
+program
+	// recommendation options
+	.command("recommendation")
+	.alias("r")
+	.description("Get top anime recommendation")
+	.action(() => {
+		recommendationData();
 	})
 
 program.parse(process.argv);
