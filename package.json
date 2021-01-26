@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/LastCleanShirt/anime_cli/issues"
   },
-  "homepage": "https://github.com/LastCleanShirt/anime_cli#readme"
+  "homepage": "https://github.com/LastCleanShirt/anime_cli#readme",
+  "bin": {
+    "anime-cli": "./index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "commander": "^7.0.0",
+    "request": "^2.88.2"
+  }
 }
