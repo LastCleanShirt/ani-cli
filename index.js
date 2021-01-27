@@ -13,6 +13,9 @@ const readConfig = require("./config.js");
 // fs
 const fs = require("fs");
 
+
+
+
 // commander.js
 const { Command } = require("commander");
 const program = new Command();
@@ -54,27 +57,43 @@ program
 	.alias("ce")
 	.description("Edit configuration")
 	.action((object, value) => {
-		console.log("configurationEdit is on a problem...");
-		/*
 		// configuration
+		/*const prettier = require("prettier");
+		const DotJson = require("dot-json");
+		const config = new DotJson("config.json");
+		config.set(object, value).set(object, value).save();*/
+		
+		
+		
 		const fs = require("fs");
-		const config = fs.readFileSync("config.json", "utf8");
-		let configshownumber = config["shownumber"];
 		
-		JSON.parse(config[object]) = value
+		const prettier = require("prettier");
 		
-		function replaceContents(file, replacement, cb) {
-			fs.readFile(file, (err, contents) => {
-				if (err) return cb(err);
-				fs.writeFile(file, contents, cb);
-			});
+		function replaceFileContents(file, replacements) {
+			fs.writeFileSync(file, replacements);
 		}
 		
-		console.log(object + " " + value + " " + JSON.parse(config));
-		replaceContents("config.json", config, err => {
-			if (err) { throw err }
-			console.log("Successfuly changed object");
-		})*/
+		let rawconfig = fs.readFileSync("config.json");
+		let config = JSON.parse(rawconfig);
+		config[object] = value
+		let data = JSON.stringify(config, null, 2);
+		let replace = replaceFileContents("config.json", data);
+		console.log(JSON.parse(rawconfig));
+		// console.log(config);
+		
+	})
+
+// list configuration options
+program
+	// list configuration options
+	.command("configurationList")
+	.alias("cl")
+	.description("List all of the configuration")
+	.action(() => {
+		const fs = require("fs");
+		const prettier = require("prettier");
+		let configuration = fs.readFileSync("config.json", "utf8");
+		console.log(prettier.format(JSON.parse(JSON.stringify(configuration)),{ semi: false, parser: "json" }));
 	})
 
 program.parse(process.argv);

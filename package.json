@@ -22,6 +22,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "commander": "^7.0.0",
+    "dot-json": "^1.2.1",
+    "prettier": "^2.2.1",
     "request": "^2.88.2"
   }
 }
