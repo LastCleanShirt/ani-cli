@@ -1,5 +1,11 @@
 # ani-cli
 
+# Installation
+## You can install ani-cli using npm
+### ``` npm install cli-anime-lastcleanshirt ```
+
+# Usage
+####``` Usage: index [options] [command] ```
 # Goal
 - [x] Making the anime search
 - [x] Making the anime recommendation
