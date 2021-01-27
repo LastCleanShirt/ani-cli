@@ -1,10 +1,10 @@
 {
   "name": "cli-anime-lastcleanshirt",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Anime CLI",
   "main": "index.js",
   "scripts": {
-    "test": "anime-cli"
+    "test": "ani-cli"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/LastCleanShirt/anime_cli#readme",
   "bin": {
-    "anime-cli": "./index.js"
+    "ani-cli": "./index.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
