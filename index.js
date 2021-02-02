@@ -4,17 +4,22 @@
 const version = "1.0.0";
 
 // data
-const searchData = require("./data/searchData.js");
+const searchAnimeData = require("./data/searchAnimeData.js");
 const recommendationData = require("./data/recommendationData.js");
+const searchCharacterData = require("./data/searchCharacterData.js");
 
 // config function
 const readConfig = require("./config.js");
 
+// config options
+readConfig("config.json", function(configuration) {
+});
+
 // fs
 const fs = require("fs");
 
-
-
+// configuration
+let config = JSON.parse(fs.readFileSync("config.json", "utf8"));
 
 // commander.js
 const { Command } = require("commander");
@@ -26,13 +31,11 @@ program.version(version);
 // search options
 program
 	// search options
-	.command("search <query>")
-	.alias("s")
+	.command("searchAnime <query>")
+	.alias("sa")
 	.description("Search anime with specific query")
 	.action((query) => {
-		const config = readConfig("./config.json", "shownumber");
-		searchData(query, config)
-		console.log(query);
+		searchAnimeData(query, config.shownumber);
 		/*if (!searchData === false){
 			console.log(searchData);
 		} else {
@@ -94,6 +97,16 @@ program
 		const prettier = require("prettier");
 		let configuration = fs.readFileSync("config.json", "utf8");
 		console.log(prettier.format(JSON.parse(JSON.stringify(configuration)),{ semi: false, parser: "json" }));
+	})
+
+// search character options
+program
+	// search character options
+	.command("searchCharacter <query>")
+	.alias("sc")
+	.description("Search Anime/Manga character with specific query")
+	.action((query) => {
+		searchCharacterData(query, shownumberconfig)
 	})
 
 program.parse(process.argv);
