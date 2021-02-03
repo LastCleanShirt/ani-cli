@@ -106,7 +106,7 @@ program
 	.alias("sc")
 	.description("Search Anime/Manga character with specific query")
 	.action((query) => {
-		searchCharacterData(query, shownumberconfig)
+		searchCharacterData(query, config.shownumber)
 	})
 
 program.parse(process.argv);

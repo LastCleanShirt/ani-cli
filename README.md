@@ -9,7 +9,7 @@
 # Goal
 - [x] Making the anime search
 - [x] Making the anime recommendation
-- [ ] Making anime character search
+- [x] Making anime character search
 - [x] Making a custom configuration system for the CLI (using json)
 
 # FAQ
