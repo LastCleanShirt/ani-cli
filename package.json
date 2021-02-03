@@ -1,6 +1,6 @@
 {
   "name": "cli-anime-lastcleanshirt",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Anime CLI",
   "main": "index.js",
   "scripts": {
