@@ -13,5 +13,5 @@
 - [x] Making a custom configuration system for the CLI (using json)
 
 # FAQ
-## Q: What is anime_cli?
+## Q: What is ani-li?
 ## A: It's a Command Line Interface (CLI) that i make to search for anime, getting anime recommendation and more about anime
