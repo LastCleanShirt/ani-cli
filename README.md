@@ -7,7 +7,7 @@
 # Usage
 ####``` Usage: index [options] [command] ```
 # Goal
-- [x] Making the anime search
+- [ ] Making colors!
 - [x] Making the anime recommendation
 - [x] Making anime character search
 - [x] Making a custom configuration system for the CLI (using json)

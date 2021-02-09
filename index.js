@@ -3,6 +3,9 @@
 // extra variables
 const version = "1.0.0";
 
+// utf8 library to convert string ot utf8
+const utf8 = require("utf8");
+
 // data
 const searchAnimeData = require("./data/searchAnimeData.js");
 const recommendationData = require("./data/recommendationData.js");
@@ -11,12 +14,23 @@ const searchCharacterData = require("./data/searchCharacterData.js");
 // config function
 const readConfig = require("./config.js");
 
+// fs
+const fs = require("fs");
+
+// function to read colors configuration
+const readColors = function(){
+	let colors = fs.readFile("colors.json", "utf8", (err, data) => {
+		if (err){
+			return null;
+		} else {
+			console.log(data["title"]);
+		}
+	})
+}
+
 // config options
 readConfig("config.json", function(configuration) {
 });
-
-// fs
-const fs = require("fs");
 
 // configuration
 let config = JSON.parse(fs.readFileSync("config.json", "utf8"));
@@ -107,6 +121,25 @@ program
 	.description("Search Anime/Manga character with specific query")
 	.action((query) => {
 		searchCharacterData(query, config.shownumber)
+	})
+
+// list color configuration options
+program
+	// list color configuration options
+	.command("colorList")
+	.alias("colorL")
+	.description("List all of the color configurations")
+	.action(() => {
+		let colors = fs.readFile("colors.json", "utf8", (err, data) => {
+			if (err){
+				return null;
+			} else {
+				let obj = JSON.parse(data);
+				let title = obj["title"];
+				// console.log(title.toString() + "Hi");
+				console.log(JSON.stringify(title.replace(/\\\\/g, "\\") + "HI"));
+			}
+		})
 	})
 
 program.parse(process.argv);
