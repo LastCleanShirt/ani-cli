@@ -135,7 +135,8 @@ program
 				return null;
 			} else {
 				let obj = JSON.parse(data);
-				let title = obj["title"];
+				let title = obj.title;
+				console.log(obj)
 				// console.log(title.toString() + "Hi");
 				console.log(JSON.stringify(title.replace(/\\\\/g, "\\") + "HI"));
 			}
