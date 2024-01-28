@@ -14,5 +14,5 @@ You can install ani-cli using npm
 - [ ] Making colors!
 
 # FAQ
-## Q: What is ani-li?
+## Q: What is ani-cli?
 ## A: It's a Command Line Interface (CLI) that i make to search for anime, getting anime recommendation and more about anime

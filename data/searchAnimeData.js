@@ -1,12 +1,15 @@
 // making request with jikan api
 
 const request = require("request");
+const print = require("./../prettyprinter")
 
 // Data
 module.exports = function (query, shownumber) {
-request("https://api.jikan.moe/v3/search/anime?q="+query, { json: true},  function(err, res, body) {
+print("Loading query:", `"${query}"`)
+request("https://api.jikan.moe/v4/anime?q="+query, { json: true},  function(err, res, result) {
 	if (!err && res.statusCode == 200) {
 		// response
+		/*
 		let i;
 		let a;
 		if (body["request_cached"] === true){
@@ -21,8 +24,12 @@ request("https://api.jikan.moe/v3/search/anime?q="+query, { json: true},  functi
 					console.log("Link: "+ body["results"][a]["url"] + "\n")
 				}
 			}
-		}
+		}*/
+		result.data.forEach((data) => {
+			console.log(data["mal_id"])
+		})
 	} else {
+		console.log("Err")
 		return err;
 	}
 });
